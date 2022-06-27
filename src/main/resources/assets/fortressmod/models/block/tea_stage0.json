@@ -1,0 +1,6 @@
+{
+	"parent": "fortressmod:block/tea",
+	"textures": {
+		"crop": "fortressmod:block/tea_stage0"
+	}
+}

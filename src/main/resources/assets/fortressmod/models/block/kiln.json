@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "fortressmod:block/kiln_top",
+    "front": "fortressmod:block/kiln_front",
+    "side": "fortressmod:block/kiln_side"
+  }
+}

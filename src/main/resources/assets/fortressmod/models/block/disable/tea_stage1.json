@@ -1,0 +1,21 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "fortressmod:block/tea_stage0",
+		"crop": "fortressmod:block/tea_stage0"
+	},
+	"elements": [
+		{
+			"from": [ 2, 0, 2 ],
+			"to": [ 14, 4, 14 ],
+			"faces": {
+				"down":  { "texture": "#crop", "uv": [0, 0, 16, 16], "cullface": "down" },
+				"up":    { "texture": "#crop", "uv": [0, 0, 16, 16], "cullface": "up" },
+				"north": { "texture": "#crop", "uv": [0, 0, 12, 4], "cullface": "north" },
+				"south": { "texture": "#crop", "uv": [0, 0, 12, 4], "cullface": "south" },
+				"west":  { "texture": "#crop", "uv": [0, 0, 12, 4], "cullface": "west" },
+				"east":  { "texture": "#crop", "uv": [0, 0, 12, 4], "cullface": "east" }
+			}
+		}
+	]
+}

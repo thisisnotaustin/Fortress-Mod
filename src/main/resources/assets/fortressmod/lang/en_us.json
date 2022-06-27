@@ -1,0 +1,32 @@
+{
+  "block.minecraft.bed.fortressmod.on_fire": "You may not rest now; you are on fire",
+  "block.minecraft.bed.fortressmod.too_hungry": "You may not rest now; you are too hungry",
+
+  "block.fortressmod.moon_rock": "Moon Rock",
+
+  "block.fortressmod.kiln": "Kiln",
+
+  "block.fortressmod.raw_silver_block": "Block of Raw Silver",
+  "block.fortressmod.silver_block": "Block of Silver",
+  "block.fortressmod.silver_ore": "Silver Ore",
+
+  "container.kiln": "Kiln",
+  "gui.recipebook.toggleRecipes.fireable": "Showing Fireable",
+
+  "item.fortressmod.raw_silver": "Raw Silver",
+  "item.fortressmod.silver_dagger": "Silver Dagger",
+  "item.fortressmod.silver_ingot": "Silver Ingot",
+
+  "item.fortressmod.milk_bottle": "Milk Bottle",
+  "item.fortressmod.tea_leaves": "Tea Leaves",
+  "item.fortressmod.tea_seeds": "Tea Seeds",
+  "item.fortressmod.worm": "Worm",
+  "item.fortressmod.glow_worm": "Glow Worm",
+
+  "item.fortressmod.tin_scrap": "Tin Scrap",
+  "item.fortressmod.mug": "Mug",
+  "item.fortressmod.water_mug": "Mug of Water",
+  "item.fortressmod.hot_water_mug": "Mug of Hot Water",
+  "item.fortressmod.hot_cocoa_mug": "Mug of Hot Cocoa",
+  "item.fortressmod.tea_mug": "Mug of Tea"
+}
