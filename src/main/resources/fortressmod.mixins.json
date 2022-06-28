@@ -6,7 +6,8 @@
   "mixins": [
     "BlastFurnaceBlockEntityMixin",
     "SmokerBlockEntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ZombieEntityMixin"
   ],
   "client": [
     "ExampleMixin"
