@@ -2,8 +2,6 @@ Changes
 
 Gameplay
 - Hunger, saturation, sprinting, and fast swimming have all been removed.
-- Eating food restores health over time. Different food items will restore different amounts of health and at different speeds.
-- You can eat food so long as you are not currently healing from eating food.
 
 HUD
 - The food bar is no longer displayed.
@@ -13,6 +11,11 @@ HUD
 
 Status Effects
 - If the player is Hungry, eating food will only restore half as much health (rounded up). This is denoted by green refill hearts.
+
+Items
+- Food items directly heal the player over time. Eating speed, health recovery speed, and health recovery amount all vary per food item.
+- You can eat food items so long as you aren't currently healing from eating food.
+- Potions can be drank faster.
 
 Blocks
 - Blast Furnaces and Smokers burn fuel 3x as fast as a normal Furnace while still smelting items only 2x as fast. This makes them faster, but less fuel-efficient.

@@ -4,6 +4,8 @@
   "package": "net.thisisnotaustin.fortressmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ItemMixin",
+    "PotionItemMixin",
     "BlastFurnaceBlockEntityMixin",
     "SmokerBlockEntityMixin",
     "PlayerEntityMixin",

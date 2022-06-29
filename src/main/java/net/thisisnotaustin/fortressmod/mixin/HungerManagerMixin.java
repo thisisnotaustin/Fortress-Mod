@@ -10,6 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.util.Pair;
 import net.minecraft.world.GameRules;
+import net.thisisnotaustin.fortressmod.util.ModTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -35,10 +36,6 @@ public abstract class HungerManagerMixin {
     // Custom field.
     private final List<Pair<Integer, Integer>> healBeats = new ArrayList<>();
     private int healingSpeed = 0;
-    private static final int INTERVAL_INSTANT = 0;
-    private static final int INTERVAL_FAST = 5;
-    private static final int INTERVAL_MEDIUM = 10;
-    private static final int INTERVAL_SLOW = 20;
 
     // Make it so that you can only eat if you aren't currently healing from food.
     public boolean isNotFull() {
@@ -51,71 +48,32 @@ public abstract class HungerManagerMixin {
             float newFoodLevel = 0;
             this.healingSpeed = 0;
 
-            if (item == Items.ROTTEN_FLESH || item == Items.SPIDER_EYE || item == Items.POISONOUS_POTATO) {
-                newFoodLevel = 1;
-                //this.healingSpeed = INTERVAL_INSTANT;
-            }
-            if (item == Items.COOKIE || item == Items.SWEET_BERRIES || item == Items.GLOW_BERRIES || item == Items.MELON_SLICE || item == Items.DRIED_KELP) {
-                newFoodLevel = 1;
-                //this.healingSpeed = INTERVAL_INSTANT;
-            }
-            if (item == Items.APPLE || item == Items.HONEY_BOTTLE) {
-                newFoodLevel = 2;
-                this.healingSpeed = INTERVAL_FAST;
-            }
-            if (item == Items.PUMPKIN_PIE) {
-                newFoodLevel = 3;
-                this.healingSpeed = INTERVAL_FAST;
-            }
-            if (item == Items.POTATO || item == Items.BEETROOT || item == Items.COD || item == Items.SALMON || item == Items.TROPICAL_FISH || item == Items.PUFFERFISH) {
-                newFoodLevel = 2;
-                this.healingSpeed = INTERVAL_MEDIUM;
-            }
-            if (item == Items.CARROT) {
-                newFoodLevel = 3;
-                this.healingSpeed = INTERVAL_MEDIUM;
-            }
-            if (item == Items.BREAD || item == Items.BAKED_POTATO || item == Items.COOKED_COD || item == Items.COOKED_SALMON) {
-                newFoodLevel = 4;
-                this.healingSpeed = INTERVAL_MEDIUM;
-            }
-            if (item == Items.COOKED_PORKCHOP || item == Items.COOKED_BEEF || item == Items.COOKED_MUTTON || item == Items.COOKED_RABBIT) {
-                newFoodLevel = 6;
-                this.healingSpeed = INTERVAL_SLOW;
-            }
-            if (item == Items.COOKED_CHICKEN) {
-                newFoodLevel = 4;
-                this.healingSpeed = INTERVAL_SLOW;
-            }
-            if (item == Items.PORKCHOP || item == Items.BEEF || item == Items.MUTTON || item == Items.CHICKEN || item == Items.RABBIT) {
-                newFoodLevel = 2;
-                this.healingSpeed = INTERVAL_SLOW;
-            }
-            if (item == Items.MUSHROOM_STEW || item == Items.RABBIT_STEW || item == Items.BEETROOT_SOUP || item == Items.SUSPICIOUS_STEW) {
-                newFoodLevel = 10;
-                this.healingSpeed = INTERVAL_FAST;
-            }
-            if (item == Items.GOLDEN_CARROT) {
-                newFoodLevel = 2;
-                this.healingSpeed = INTERVAL_INSTANT;
-            }
-            if (item == Items.GOLDEN_APPLE) {
-                newFoodLevel = 5;
-                this.healingSpeed = INTERVAL_INSTANT;
-            }
-            if (item == Items.ENCHANTED_GOLDEN_APPLE) {
-                newFoodLevel = 20;
-                this.healingSpeed = INTERVAL_INSTANT;
-            }
+            // Decide on healing amount.
+            if (stack.isIn(ModTags.Items.EATING_HEALS_1)) this.setFoodLevel(1);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_2)) this.setFoodLevel(2);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_3)) this.setFoodLevel(3);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_4)) this.setFoodLevel(4);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_5)) this.setFoodLevel(5);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_6)) this.setFoodLevel(6);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_7)) this.setFoodLevel(7);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_8)) this.setFoodLevel(8);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_9)) this.setFoodLevel(9);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_10)) this.setFoodLevel(10);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_11)) this.setFoodLevel(11);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_12)) this.setFoodLevel(12);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_13)) this.setFoodLevel(13);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_14)) this.setFoodLevel(14);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_15)) this.setFoodLevel(15);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_16)) this.setFoodLevel(16);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_17)) this.setFoodLevel(17);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_18)) this.setFoodLevel(18);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_19)) this.setFoodLevel(19);
+            if (stack.isIn(ModTags.Items.EATING_HEALS_20)) this.setFoodLevel(20);
 
-            // Halve food value if the player is suffering from Hunger.
-            if (stack.getHolder() instanceof PlayerEntity player) {
-                if (player.hasStatusEffect(StatusEffects.HUNGER)) {
-                    newFoodLevel = (int) Math.ceil(newFoodLevel / 2f);
-                }
-            }
+            // Decide on healing speed.
+            this.healingSpeed = stack.isIn(ModTags.Items.EATING_HEALS_VERY_FAST) ? 0 : (stack.isIn(ModTags.Items.EATING_HEALS_FAST) ? 5 : (stack.isIn(ModTags.Items.EATING_HEALS_SLOW) ? 20 : 10));
 
-            this.setFoodLevel((int) newFoodLevel);
+            // Make the first heal immediate.
             this.foodTickTimer = this.healingSpeed;
         }
     }

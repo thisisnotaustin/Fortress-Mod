@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cooked_cod",
+    "minecraft:cooked_salmon",
+    "minecraft:baked_potato",
+    "minecraft:bread",
+    "minecraft:pumpkin_pie",
+    "minecraft:golden_apple"
+  ]
+}
